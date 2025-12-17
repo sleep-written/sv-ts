@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "target": "es2024",
+        "module": "node16",
+        "moduleResolution": "node16",
+        "verbatimModuleSyntax": true,
+
+        "noEmit": true,
+        "allowImportingTsExtensions": true
+    },
+    "include": [
+        "./src",
+        "./lib"
+    ]
+}

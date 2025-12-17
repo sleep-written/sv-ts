@@ -1,0 +1,24 @@
+{
+  "type": "module",
+  "scripts": {
+    "build:tree": "node --import ./lib/tree/index.ts src/index.ts",
+    "build:tojs": "node ./lib/transpiler/index.ts",
+    "clean": "rm -rf ./dist",
+    "build": "clear && node --run clean && node --run build:tree && node --run build:tojs"
+  },
+  "devDependencies": {
+    "@babel/generator": "^7.28.5",
+    "@babel/parser": "^7.28.5",
+    "@babel/traverse": "^7.28.5",
+    "@babel/types": "^7.28.5",
+    "@swc/core": "^1.15.5",
+    "@types/babel__generator": "^7.27.0",
+    "@types/babel__traverse": "^7.28.0",
+    "@types/node": "^25.0.3",
+    "typescript": "^5.9.3"
+  },
+  "imports": {
+    "#lib/transpiler/*.ts": "./lib/transpiler/*.ts",
+    "#lib/tree/*.ts": "./lib/tree/*.ts"
+  }
+}
