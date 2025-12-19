@@ -1,10 +1,10 @@
 import type { DependencyTreeItem } from './dependency-tree-item.ts';
 import type { LoadHookContext } from 'node:module';
 
-import { access, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { access, mkdir, readFile, rm } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
-import { dirname } from 'node:path';
 import { writeFileSync } from 'node:fs';
+import { dirname } from 'node:path';
 
 export class DependencyTree {
     #path = fileURLToPath(

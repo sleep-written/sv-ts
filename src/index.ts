@@ -31,6 +31,8 @@ export const main: MainFn = () => {
     };
 
     const resp = SV.showCustomDialog({
+        title: 'Random Syllables',
+        message: 'Elija el conjunto de sílabas que desea utilizar:',
         buttons:'OkCancel',
         widgets: Object
             .entries(collection)
