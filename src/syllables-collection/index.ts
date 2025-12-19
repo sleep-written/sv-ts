@@ -1,0 +1,1 @@
+export { SyllablesCollection } from './syllables-collection.ts';

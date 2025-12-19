@@ -7,10 +7,12 @@
         "verbatimModuleSyntax": true,
 
         "noEmit": true,
-        "allowImportingTsExtensions": true
-    },
-    "include": [
-        "./src",
-        "./lib"
-    ]
+        "allowJs": true,
+        "allowImportingTsExtensions": true,
+
+        "typeRoots": [
+            "types",
+            "node_modules/@types"
+        ]
+    }
 }

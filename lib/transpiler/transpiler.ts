@@ -21,7 +21,7 @@ export class Transpiler {
         const { code } = await transform(source, {
             isModule: true,
             jsc: {
-                target: 'es3',
+                target: 'es5',
                 parser: {
                     syntax: 'typescript'
                 },
@@ -43,6 +43,26 @@ export class Transpiler {
                 throw new Error(
                     `Private methods are forbidden: ${path.node.key.id.name}`
                 );
+            }
+        });
+
+        traverse.default(parsedCode, {
+            ExportNamedDeclaration(path) {
+                // export { X } from './y'
+                if (path.node.source) {
+                    path.remove();
+                    return;
+                }
+
+                // export { X, Y }
+                if (!path.node.declaration && path.node.specifiers.length > 0) {
+                    path.remove();
+                }
+            },
+
+            ExportAllDeclaration(path) {
+                // export * from './y'
+                path.remove();
             }
         });
 
@@ -185,9 +205,7 @@ export class Transpiler {
             comments: false
         });
 
-        console.log(styleText([ 'greenBright' ], `"${path}"`) + ':');
-        console.log(result.code);
-        console.log();
+        console.log('File ' + styleText([ 'greenBright' ], `"${path}"`) + ' was transpiled!');
         return result;
     }
 }
