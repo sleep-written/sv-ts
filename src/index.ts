@@ -10,17 +10,12 @@ export const getClientInfo: GetClientInfoFn = () => ({
 
 export const main: MainFn = () => {
     const collection: Record<string, SyllablesCollection> = {
-        Filosas: new SyllablesCollection([
-            'ka', 'ke', 'ki', 'ko', 'ku'
-        ]),
-
         Vocales: new SyllablesCollection([
             'a', 'e', 'i', 'o', 'u',
-            'ae', 'ai', 'ao', 'au',
-            'ea', 'ei', 'eo', 'eu',
-            'ia', 'ie', 'io', 'iu',
-            'oa', 'oe', 'oi', 'ou',
-            'ua', 'ue', 'ui', 'uo',
+        ]),
+        
+        Filosas: new SyllablesCollection([
+            'ka', 'ke', 'ki', 'ko', 'ku'
         ]),
 
         Percusivas: new SyllablesCollection([
