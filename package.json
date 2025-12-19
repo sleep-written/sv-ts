@@ -21,8 +21,5 @@
   "imports": {
     "#lib/transpiler/*.ts": "./lib/transpiler/*.ts",
     "#lib/tree/*.ts": "./lib/tree/*.ts"
-  },
-  "dependencies": {
-    "core-js": "^3.47.0"
   }
 }
